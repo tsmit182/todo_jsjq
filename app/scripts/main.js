@@ -6,14 +6,16 @@ $('.itemSubmit').click(function() {
 	//inputVal gets user-input value of `.itemInput`
 	var inputVal = $('.itemInput').val()
 	console.log(inputVal);
-	$('.itemField').append('<div class="todoCont"><div class="todoItem">' + inputVal + '</div></div>');
+	$('.itemField').append('<div class="todoCont"><div class="todoItem active">' + inputVal + '</div></div>');
 		
 
 
-	$('.todoItem').click(function() {
-		$(this).toggleClass('strikethrough');
-		$(this).remove();
-	});
+
+
+
+	// $('.todoItem.active').click(function() {
+	// 	$(this).addClass('strikethrough').removeClass('active');
+	// });
 
 // var item = $('.todoItem');
 		// item.click(function() {
@@ -81,7 +83,12 @@ $('.itemSubmit').click(function() {
 
 
 
-
+	$('body').on('click', '.todoItem.active', function() {
+	  $(this).removeClass('active').addClass('strikethrough');
+	});
+	$('body').on('click', '.todoItem.strikethrough', function() {
+		$(this).removeClass('strikethrough').addClass('active');
+	});
 
 
 
