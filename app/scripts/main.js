@@ -9,10 +9,23 @@ $('.itemSubmit').click(function() {
 	$('.itemField').append('<div class="todoItem active">' + inputVal + '</div>');
 		var item = $('.todoItem');
 
+
 		item.click(function() {
-			console.log('clicked')
-			item.addClass('strikethrough')
-			item.removeClass('active');
+			if ($(this).hasClass('active')){
+				$(this).removeClass('active');
+				$(this).addClass('strikethrough');
+
+			// } else if ($(this).hasClass('strikethrough')){
+			// 	console.log('strikethrough click!');
+			// 	$(this).removeClass('strikethrough');
+			// 	$(this).addClass('active');
+				
+			// } else
+			} else {
+				console.log('hello')
+				$(this).removeClass('strikethrough');
+								$(this).addClass('active');
+			}
 		});
 
 
