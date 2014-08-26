@@ -25,6 +25,19 @@ body {
   }
 }
 
+.todoItem {
+  display: inline;
+}
+
+.mark {
+  display: inline;
+}
+
+.remove {
+  display: inline;
+}
+
 .strikethrough {
   text-decoration: line-through;
 }
+
