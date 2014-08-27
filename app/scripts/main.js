@@ -1,100 +1,42 @@
 //consider defining an empty global variable, should you need it:
 // var App = {};
 
-//click `.itemSubmit` to run following code block
+// click `.itemSubmit` to run following code block
 $('.itemSubmit').click(function() {
 	//inputVal gets user-input value of `.itemInput`
 	var inputVal = $('.itemInput').val()
-	console.log(inputVal);
-	$('.itemField').append('<div class="todoCont"><div class="todoItem active">' + inputVal + '</div></div>');
-		
-
-
-
-
-
-	// $('.todoItem.active').click(function() {
-	// 	$(this).addClass('strikethrough').removeClass('active');
-	// });
-
-// var item = $('.todoItem');
-		// item.click(function() {
-		// 	if ($(item).hasClass('active')){
-		// 		$(this).removeClass('active');
-		// 		$(this).addClass('strikethrough');
-
-		// 	} else if ($(this).hasClass('strikethrough')){
-		// 		console.log('strikethrough click!');
-		// 		$(this).removeClass('strikethrough');
-		// 		$(this).addClass('active');
-				
-		// 	// } else
-		// 	} else {
-		// 		console.log('hello')
-		// 		$(this).removeClass('strikethrough');
-		// 		$(this).addClass('active');
-		// 	}
-		// });
-
-
-
-		// item.on('click', function(e) {
-		// 	// $(this).toggleClass('active strikethrough');
-		// 	$(this).setAttribute('todoItem', 'strikethrough');
-		// });
-
-
-
-	// $('.active').click(function(){
-	// 	console.log('active targeted');
-	// })
-	// $('.strikethrough').click(function(){
-	// 	console.log(this+'targeted');
-	// })
-
-
-
-
-
-		// $('.todoItem.active').click(function(){
-		// 	console.log('active targeted');
-		// 	$(this).addClass('strikethrough').removeClass('active');
-		// 	$('.todoItem.strikethrough').click(function(){
-		// 	console.log('strikethrough targeted')
-		// 	$(this).addClass('active').removeClass('strikethrough');
-		// });});
-
-
-		// $('.todoItem').click(function(){
-		// 	if ($(this).hasClass('active')){
-		// 		$(this).addClass('strikethrough');
-		// 	} else if ($(this).hasClass('strikethrough')) {
-		// 		$(this).removeClass('strikethrough');
-		// 	}
-		// });
-
-
-		
-
-		//
-	
-
+	//value is appended to the `.itemField` div
+	$('.itemField').append('<div class="todoCont"><div class="todoItem active">' + inputVal + '</div><div class="remItemCont"><div class="remItem">x</div></div></div>');
+	$('.itemInput').val('');
 });
 
 
 
-	$('body').on('click', '.todoItem.active', function() {
+
+
+// $('.itemSubmit').on('click keydown', function (e){
+//     if (e.type == "click" || e.keyCode == 13) {
+//         alert("click or esc");
+//     }	
+//   });
+
+
+
+	//targets divs with the classes of `todoItem` and `active` on click
+	$('.itemField').on('click', '.todoItem.active', function() {
+		//removes `active` class and adds `strikethrough` class (adds line-through in css)
 	  $(this).removeClass('active').addClass('strikethrough');
 	});
-	$('body').on('click', '.todoItem.strikethrough', function() {
+	//targets divs with the classes of `todoItem` and `strikethrough` on click
+	$('.itemField').on('click', '.todoItem.strikethrough', function() {
+		//removes `strikethough` class and adds `active` class (removes line-through if present)
 		$(this).removeClass('strikethrough').addClass('active');
 	});
 
 
 
 
-$('h2').click(function(){
-	console.log('clicked')
-	$('h2').addClass('strikethrough');
+//when `.remItem` clicked, removes corresponding todoItem
+$('.itemField').on('click', '.remItem', function(){
+	$(this).parent().parent().remove();
 });
-

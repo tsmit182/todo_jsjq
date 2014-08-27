@@ -4,12 +4,15 @@
 
 // Custom Styles
 body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // background: #fafafa;
+  background-image: url(../images/notebook/notebook_@2X.png);
+  // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: monospace;
   color: #333;
 }
 
 .hero-unit {
+  // background-image: url(../images/flamingo.jpg);
   margin: 50px auto 0 auto;
   width: 600px;
   font-size: 18px;
@@ -18,23 +21,31 @@ body {
   background-color: #eee;
   border-radius: 6px;
   padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
+}
+
+h2 {
+
+}
+
+.todoCont {
+  border-bottom: 1px solid grey;
+  background-color: grey;
 }
 
 .todoItem {
   display: inline;
 }
 
-.mark {
-  display: inline;
+.remItemCont {
+  float:right;
 }
 
-.remove {
+.remItem {
   display: inline;
+  border: 1px dashed red;
+  border-style: outset;
+  background-color: red;
+  // float:right;
 }
 
 .strikethrough {
