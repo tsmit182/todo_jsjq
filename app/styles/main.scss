@@ -40,21 +40,27 @@ h2 {
 
 .todoItem {
   display: inline;
+  margin-left: 5px;
 }
 
 .remItemCont {
   float:right;
+  margin-right: 5px;
 }
 
 .remItem {
   display: inline;
   border: 1px dashed red;
   border-style: outset;
-  background-color: red;
+  color: white;
+  background-color: salmon;
+  padding: 0px 3px 1px 3px;
+
   // float:right;
 }
 
 .strikethrough {
   text-decoration: line-through;
+  opacity: .7
 }
 
