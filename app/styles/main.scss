@@ -12,7 +12,7 @@ body {
 }
 
 .hero-unit {
-  // background-image: url(../images/flamingo.jpg);
+  background-image: url(../images/halftone/halftone.png);
   margin: 50px auto 0 auto;
   width: 600px;
   font-size: 18px;
@@ -24,12 +24,18 @@ body {
 }
 
 h2 {
+  text-align: center;
+}
 
+.itemInput {
+  width: 85%;
+  padding: 2%
 }
 
 .todoCont {
   border-bottom: 1px solid grey;
-  background-color: grey;
+  background-color: white;
+  opacity: 0.9;
 }
 
 .todoItem {
