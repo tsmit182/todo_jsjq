@@ -17,7 +17,7 @@ var submitFun = (function() {
 //call submitFun when `itemSubmit` clicked
 $('.itemSubmit').click(submitFun);
 //call submitFun when return key pressed while text cursor is active within `.itemInput`
-$('.itemInput').keypress(function() {
+$('.itemInput').keydown(function() {
 	if (event.which == 13) submitFun();
 });
 
